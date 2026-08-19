@@ -1,0 +1,8 @@
+{
+  "embedding_model": "all-MiniLM-L6-v2",
+  "chunk_size": 500,
+  "chunk_overlap": 100,
+  "total_chunks": 157,
+  "total_documents": 33,
+  "dimension": 384
+}
