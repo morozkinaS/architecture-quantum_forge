@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  rag-bot:
+    build: .
+    container_name: quantumforge-rag-bot
+    stdin_open: true
+    tty: true
+    environment:
+      - YANDEX_IAM_TOKEN=${YANDEX_IAM_TOKEN:-}
+      - YANDEX_FOLDER_ID=${YANDEX_FOLDER_ID:-}
+      - PYTHONIOENCODING=utf-8
+    volumes:
+      - ./faiss_index:/app/faiss_index
+      - ./knowledge_base:/app/knowledge_base
+    restart: unless-stopped
